@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -78,6 +79,13 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
   end
+  object conexao: TLabel
+    Left = 608
+    Top = 32
+    Width = 41
+    Height = 13
+    Caption = 'conexao'
+  end
   object txt_ID: TEdit
     Left = 140
     Top = 8
@@ -139,8 +147,39 @@ object Form1: TForm1
       '')
     TabOrder = 4
   end
+  object btn_NOVO: TButton
+    Left = 376
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'NOVO'
+    TabOrder = 5
+  end
+  object btn_SALVAR: TButton
+    Left = 457
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'SALVAR'
+    TabOrder = 6
+  end
   object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=D:\projetosdelphi\CRUD-Delphi-com-banco-de-dados\Win32\' +
+        'Debug\assets\contatos.mdb'
+      'DriverID=MSAcc')
+    Left = 40
+    Top = 232
+  end
+  object FDContatos: TFDTable
+    Connection = FDConnection1
     Left = 56
-    Top = 192
+    Top = 296
+  end
+  object DataSource1: TDataSource
+    DataSet = FDContatos
+    Left = 152
+    Top = 296
   end
 end
